@@ -1,11 +1,13 @@
 export function saveData(key, data) {
   try {
     localStorage.setItem(key, JSON.stringify(data));
+    return true;
   } catch (e) {
     console.error("Error saving data:", e);
+    return false;
   }
 }
-export function getData(key) {
+export function getData(key, defaultValue = null) {
   const data = localStorage.getItem(key);
 
   if (data) {
@@ -13,16 +15,28 @@ export function getData(key) {
       return JSON.parse(data);
     } catch (e) {
       console.error("Error parsing data:", e);
-      return null;
+      return defaultValue;
     }
   }
 
-  return null;
+  return defaultValue;
 }
-export function removeData(key){
-localStorage.removeItem(key)
-}
-export function clearData(){
-    localStorage.clear();
+export function removeData(id) {
+  try {
+    localStorage.removeItem(id);
+    return true;
+  } catch (error) {
+    console.error("Error delete data:", error);
+    return false;
+  }
 
+}
+export function clearData() {
+  try {
+    localStorage.clear();
+    return true;
+  } catch (error) {
+    console.error("Error clear data:", error);
+    return false;
+  }
 }

@@ -3,5 +3,6 @@ export const config = {
     appName:"GGExpenseTracker",
     defaultCategory:"Rent",
     maxTransctionLimit:"100000",
-    dateFormat:"DD/MM/YYYY"
+    dateFormat:"DD/MM/YYYY",
+    TRANSACTION_KEY:"transactions"
 }
