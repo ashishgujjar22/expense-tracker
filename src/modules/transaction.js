@@ -22,7 +22,7 @@ export function addTransaction({ amount, description, category, date }) {
   //   console.log(data);
 }
 export function getTransactions() {
-   
+   const g = g;
 }
 export function deleteTransaction(id) {
     
