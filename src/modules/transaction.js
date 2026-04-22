@@ -31,12 +31,12 @@ export function getTransaction(id){
 }
 export function deleteTransaction(id) {
     
-    const data = getData(config.TRANSACTION_KEY);
+    const data = getData(config.TRANSACTION_KEY) || [];
     const fData = data.filter(t => t.id !== id);
     saveData(config.TRANSACTION_KEY, fData);
 }
 export function editTransaction(id, updateFields) {
-const data = getData(config.TRANSACTION_KEY)
+const data = getData(config.TRANSACTION_KEY) || [];
 const uData = data.map(d=>{
     if(d.id === id){
        return {...d,...updateFields}
