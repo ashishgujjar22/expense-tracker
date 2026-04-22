@@ -3,8 +3,6 @@ import {
   saveData,
   config,
   getData,
-  timeFilters,
-  sortFilters,
   removeData,
 } from "../index.js";
 
@@ -22,7 +20,14 @@ export function addTransaction({ amount, description, category, date }) {
   //   console.log(data);
 }
 export function getTransactions() {
-   const g = hgjhfkkhjsdhjsgcdfddfsdfgfgs;
+   return getData(config.TRANSACTION_KEY) || []  ;
+
+  
+
+}
+export function getTransaction(id){
+  const data = getData(config.TRANSACTION_KEY) || []; 
+  return data.find(ele=> ele.id=== id)
 }
 export function deleteTransaction(id) {
     
@@ -34,7 +39,7 @@ export function editTransaction(id, updateFields) {
 const data = getData(config.TRANSACTION_KEY)
 const uData = data.map(d=>{
     if(d.id === id){
-       return d={...d,...updateFields}
+       return {...d,...updateFields}
         
     }return d;
 })

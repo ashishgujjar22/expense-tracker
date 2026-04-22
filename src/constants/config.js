@@ -4,5 +4,6 @@ export const config = {
     defaultCategory:"Rent",
     maxTransctionLimit:"100000",
     dateFormat:"DD/MM/YYYY",
-    TRANSACTION_KEY:"transactions"
+    TRANSACTION_KEY:"transactions",
+    GOAL_KEY:"goals",
 }
