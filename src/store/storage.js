@@ -10,7 +10,7 @@ export function saveData(key, data) {
 export function getData(key, defaultValue = null) {
   const data = localStorage.getItem(key);
 
-  if (data) {
+  if (data !== null) {
     try {
       return JSON.parse(data);
     } catch (e) {
